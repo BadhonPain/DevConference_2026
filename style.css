@@ -227,3 +227,16 @@ li a {
     border: none;
 
 }
+
+footer{
+
+    background:#08192f;
+    color:white;
+    padding:60px 80px 30px;
+
+}
+
+footer-design{
+    max-width: 1200px;
+    margin: auto;
+}
