@@ -131,3 +131,99 @@ li a {
     font-size: 15px;
 }
 
+.price h2 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.price-short-title {
+    text-align: center;
+    color: #777;
+    margin-bottom: 60px;
+
+}
+
+.price-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+
+}
+
+
+.price-card {
+
+    flex: 1;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 30px;
+    background: white;
+
+}
+
+.price-card h5 {
+    color: #777;
+    font-size: 12px;
+    margin-bottom: 10px;
+
+}
+
+.price-card h3 {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.price-card span {
+    color: #888;
+    font-size: 14px;
+}
+
+.price-card hr {
+
+    margin: 25px 0;
+    border: none;
+    border-top: 1px solid #eee;
+
+}
+
+.price-card ul {
+    padding-left: 20px;
+}
+
+.price-card li {
+    margin-bottom: 15px;
+    color: #555;
+    font-size: 15px;
+    list-style: circle;
+}
+
+.price-card button {
+
+    width: 100%;
+    padding: 14px;
+    margin-top: 20px;
+    border-radius: 8px;
+    border: 1px solid #2f5cff;
+    background: white;
+    color: #2f5cff;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.pro {
+    background: #08192f;
+    color: white;
+}
+
+.pro hr {
+    border-top: 1px solid rgba(255, 255, 255, .2);
+}
+
+.pro button {
+
+    background: #2f5cff;
+    color: white;
+    border: none;
+
+}
