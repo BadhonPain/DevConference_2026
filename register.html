@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register — Developer's Conference 2026</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="./assets/logo.png" alt="DevConf 2026 logo">
+            </div>
+            <div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#speakers">Speakers</a></li>
+                    <li><a href="index.html#pricing">Pricing</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="register-page container">
+
+        <div class="register-page-inner">
+
+            <h2>Register for DevConf 2026</h2>
+            <p class="register-page-subtitle">Fill in your details and we'll send your confirmation by email.</p>
+
+            <form class="register-form" id="registerForm">
+                <div class="form-row">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Jane Doe" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="jane@company.com" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000">
+                </div>
+
+                <div class="form-row">
+                    <label for="company">Company / Organization</label>
+                    <input type="text" id="company" name="company" placeholder="Optional">
+                </div>
+
+                <div class="form-row">
+                    <label for="ticket">Ticket Type</label>
+                    <select id="ticket" name="ticket" required>
+                        <option value="" disabled>Select a ticket</option>
+                        <option value="standard">Standard — $399</option>
+                        <option value="pro">Pro — $749</option>
+                        <option value="team">Team — $5,999 (up to 10)</option>
+                    </select>
+                </div>
+
+                <div class="form-row" id="teamRow" hidden>
+                    <label for="teamSize">Number of Attendees</label>
+                    <input type="number" id="teamSize" name="teamSize" min="2" max="10" placeholder="e.g. 5">
+                </div>
+
+                <button type="submit" class="common-button register-submit">Complete Registration</button>
+            </form>
+
+        </div>
+
+    </section>
+
+    <footer class="footer-design ">
+        <div class="footer-credit">
+            <p>&copy; 2026 DevConf. All rights reserved.</p>
+        </div>
+        <div class="footer-links">
+            <ul>
+                <li><a href="">Privacy Policy</a></li>
+                <li><a href="">Terms of Service</a></li>
+            </ul>
+        </div>
+
+    </footer>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const preselect = params.get('ticket');
+        const ticketSelect = document.getElementById('ticket');
+        const teamRow = document.getElementById('teamRow');
+
+        if (preselect) {
+            ticketSelect.value = preselect;
+            teamRow.hidden = preselect !== 'team';
+        }
+
+        ticketSelect.addEventListener('change', () => {
+            teamRow.hidden = ticketSelect.value !== 'team';
+        });
+
+        document.getElementById('registerForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Hook this up to your backend/email service later
+            alert('Registration submitted! We will email your confirmation shortly.');
+        });
+    </script>
+
+</body>
+
+</html>
