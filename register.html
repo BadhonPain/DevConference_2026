@@ -87,28 +87,7 @@
 
     </footer>
 
-    <script>
-        const params = new URLSearchParams(window.location.search);
-        const preselect = params.get('ticket');
-        const ticketSelect = document.getElementById('ticket');
-        const teamRow = document.getElementById('teamRow');
-
-        if (preselect) {
-            ticketSelect.value = preselect;
-            teamRow.hidden = preselect !== 'team';
-        }
-
-        ticketSelect.addEventListener('change', () => {
-            teamRow.hidden = ticketSelect.value !== 'team';
-        });
-
-        document.getElementById('registerForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            // Hook this up to your backend/email service later
-            alert('Registration submitted! We will email your confirmation shortly.');
-        });
-    </script>
-
+  
 </body>
 
 </html>
